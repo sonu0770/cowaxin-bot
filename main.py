@@ -1,17 +1,18 @@
+#adding libraries
 import requests
 from twilio.rest import Client
 import time
 
 def sms(message):
-    account_sid = 'ACc3ab9992d059906fe2bba5b81a9103a9'
-    auth_token = '9665c7f9c7393354b4b94cf4a2b31615'
+    account_sid = '<YOUR-SID>'
+    auth_token = '<YOUR-TOKEN>'
     client = Client(account_sid, auth_token)
 
     message = client.messages \
         .create(
             body=message,
-            from_='+12158263290',
-            to='+917489809756'
+            from_='<YOUR_TWILIO_NO.>',
+            to='+91XXXXXXXXXX'
         )
 
     print(message.sid)
